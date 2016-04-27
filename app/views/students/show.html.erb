@@ -1,11 +1,7 @@
-<ul>
-  <% @students.each do |student| %>
-    <li>
-      <p><%= link_to student.body, todo_path(student) %></p>
-    </li>
-  <% end %>
-</ul>
-
-<h2><%= link_to "Students", todos_path %></h2>
-<p><%= @student.name %></p>
-<p><%= @student.grade_level %></p>
+<h1><%= link_to "Students", students_path %></h1>
+  <li>
+    <strong>Student:</strong>
+    <p><%= @student.name %></p>
+    <strong>Grade Level:</strong>
+    <p><%= @student.grade_level %></p>
+  </li>
