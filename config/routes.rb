@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'students' => 'students#index'
+  get 'assignments' => 'assignments#index'
 
   resources :students, only: [:index, :show]
   resources :assignments, only: [:index, :show]
