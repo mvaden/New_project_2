@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   def index
     @students = Student.all
+    @assignments = Assignment.all
   end
 
   def show
@@ -12,7 +13,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Artist.create!(student_params)
+    @student = Student.create!(student_params)
     flash[:notice] = "student created successfully!"
     redirect_to @student
     if params[:student][:name] == ""

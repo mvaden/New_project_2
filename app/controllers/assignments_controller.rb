@@ -1,5 +1,6 @@
 class AssignmentsController < ApplicationController
   def index
+    @students = Student.all
     @assignments = Assignment.all
   end
 
@@ -14,10 +15,10 @@ class AssignmentsController < ApplicationController
   def create
     @assignment = Assignment.create!(assignment_params)
     flash[:notice] = "Assignment created successfully!"
-    redirect_to @student
+    redirect_to @assignment
     if params[:assignment][:name] == ""
       flash[:alert] = "Assignment can't be blank!"
-      redirect_to @student
+      redirect_to @assignment
     else
       @assignment = Assignment.create(assignment_params)
       redirect_to @assignment
@@ -25,7 +26,7 @@ class AssignmentsController < ApplicationController
   end
 
   def destroy
-    @assignment = assignment.find(params[:id])
+    @assignment = Assignment.find(params[:id])
     @assignment.destroy
     redirect_to assignments_path
   end

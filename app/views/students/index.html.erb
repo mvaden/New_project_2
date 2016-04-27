@@ -1,9 +1,17 @@
 <h1>List of Students</h1>
-
 <ul>
   <% @students.each do |student| %>
     <li>
       <%= link_to student.name, student_path(student) %>
+    </li>
+  <% end %>
+</ul>
+
+<h4>Go to Assignments</h4>
+<ul>
+  <% @assignments.each do |assignment| %>
+    <li>
+      <%= link_to assignment.name, assignment_path(assignment) %>
     </li>
   <% end %>
 </ul>
