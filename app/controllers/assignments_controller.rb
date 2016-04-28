@@ -13,16 +13,16 @@ class AssignmentsController < ApplicationController
   end
 
   def create
-    @assignment = Assignment.create!(assignment_params)
-    flash[:notice] = "Assignment created successfully!"
-    redirect_to @assignment
-    if params[:assignment][:name] == ""
-      flash[:alert] = "Assignment can't be blank!"
-      redirect_to @assignment
-    else
-      @assignment = Assignment.create(assignment_params)
-      redirect_to @assignment
-    end
+    # @assignment = Assignment.create!(assignment_params)
+    # flash[:notice] = "Assignment created successfully!"
+    # redirect_to @assignment
+    # if params[:assignment][:name] == ""
+    #   flash[:alert] = "Assignment can't be blank!"
+    #   redirect_to @assignment
+    # else
+    #   @assignment = Assignment.create(assignment_params)
+    #   redirect_to @assignment
+    # end
   end
 
   def destroy

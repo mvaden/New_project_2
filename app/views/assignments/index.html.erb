@@ -14,7 +14,7 @@
     <li>
       <%= link_to student.name, student_path(student) %>
       <% student.assignments.each do |assignment| %>
-      <%= link_to assignment.name, assignment_path(assignment) %>
+        <%= link_to assignment.name, assignment_path(assignment) %>
       <% end %>
     </li>
   <% end %>
