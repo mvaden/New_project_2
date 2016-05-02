@@ -1,5 +1,7 @@
 <h2>New Student</h2>
 
+<!-- this form will probably generate an error... the variable should be @student
+singular, and the attributes don't line up with a students attributes. -->
 <%= form_for @students do |f| %>
   <%= f.label :body %>
   <%= f.text_field :body %>
