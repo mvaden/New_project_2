@@ -1,4 +1,8 @@
 class AssignmentsController < ApplicationController
+
+  # I noticed a lot of duplication between the students index and the
+  # assignments index... they both show the exact same info (list of
+  # students and assingments)
   def index
     @students = Student.all
     @assignments = Assignment.all

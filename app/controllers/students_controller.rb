@@ -13,6 +13,12 @@ class StudentsController < ApplicationController
   end
 
   def create
+    # this code is a bit confusing and would cause problems when trying to
+    # create a student with a blank name. It looks like you copied code
+    # from the lesson on validations, but that code was flagged in the LP
+    # as being *not* the ideal way to approach validation. Make sure you're
+    # thinking through what code does when copying!
+
     @student = Student.create!(student_params)
     flash[:notice] = "student created successfully!"
     redirect_to @student
